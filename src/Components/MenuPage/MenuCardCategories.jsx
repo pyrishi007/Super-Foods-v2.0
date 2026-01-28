@@ -12,7 +12,9 @@ const MenuCardCategories = (props) => {
     setAccordions(!Accordions);
   };
 
-  //
+  //testing 
+  console.log(title);
+  
 
   return (
     <div className="w-6/12 m-auto px-5 py-2">
