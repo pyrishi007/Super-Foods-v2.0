@@ -6,9 +6,12 @@ Built using **React**, styled with **Tailwind CSS**, powered by **Redux** for st
 ## 📂 Folder Structure
 
 Lets understand my folder structure.
+
+```md
+## 📂 Folder Structure
+
+```bash
 SUPER_FOODV2.0/
-│
-├── node_modules/
 │
 ├── src/
 │   ├── api/
@@ -18,43 +21,14 @@ SUPER_FOODV2.0/
 │   │
 │   ├── Components/
 │   │   ├── AboutUs/
-│   │   │   ├── AboutUS.css
-│   │   │   ├── AboutUs.jsx
-│   │   │   └── Error / RouteError/
-│   │   │       └── RouteError.jsx
-│   │   │
 │   │   ├── Footer/
-│   │   │   ├── footer.css
-│   │   │   └── Footer.jsx
-│   │   │
 │   │   ├── MenuPage/
-│   │   │   ├── Banner.jsx
-│   │   │   ├── MenuCardCategories.jsx
-│   │   │   ├── MenuCategoriesItems.jsx
-│   │   │   └── MenuPage.jsx
-│   │   │
 │   │   ├── Navigation/
-│   │   │   ├── Header.jsx
-│   │   │   └── Navigation.jsx
-│   │   │
 │   │   ├── PreLoader/
-│   │   │   ├── preloader.css
-│   │   │   └── PreLoader.jsx
-│   │   │
 │   │   ├── RestroCard/
-│   │   │   ├── Restrocard.jsx
-│   │   │   └── Search.jsx
-│   │   │
 │   │   ├── ShimmerUI/
-│   │   │   ├── shimmer.css
-│   │   │   └── Shimmer.jsx
-│   │   │
 │   │   ├── TopRatedRestro/
-│   │   │   └── TopRatedRestro.jsx
-│   │   │
 │   │   ├── UserProfile/
-│   │   │   └── UserClass.jsx
-│   │   │
 │   │   └── Body.jsx
 │   │
 │   ├── HOCS/
