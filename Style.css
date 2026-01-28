@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root will be Inherited to all */
+:root {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* *applies to all */
+/* * {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none !important;
+  color: inherit;       
+}
+
+ 
+
+body {
+  background-color: #1a1a1a;
+} */
+
+/*-----------------HEADER-----------------*/
+/* .header {
+  display: flex;
+  height: 120px;
+  justify-content: space-between;
+  background-color: #ffa500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 10px 100px;
+}
+
+/* LOGO_IMAGE */
+/* .logo > img {
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+.logo > img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+} */
+
+/* LOGO_FONT */
+/* .logo > p {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #111;
+} */
+
+/* ----------------NAV_BAR---------------- */
+/* .navbar {
+  padding-left: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar > ul {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.navbar > ul > li {
+  height: 55px;
+  border: 1px solid rgba(0, 0, 0, 0.575);
+  border-radius: 50%;
+  width: 55px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.6s ease-in-out;
+  transition: transform 0.3s ease;
+  box-shadow: inset 0px 3px 10px rgba(255, 255, 255, 0.4);
+}
+
+.navbar > ul > li > img {
+  width: 40px;
+  height: 40px;
+}
+
+.img-style {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#img-style{
+    width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#img-style img{
+  width: 40px;
+  height: 40px;
+}
+.img-style img {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar > ul > li:hover {
+  transform: translateY(-6px) scale(1.1);
+  transition: transform 0.3s ease;
+}  */
+
+/* NAVBAR_LOGGIN */
+/* .loggin {
+  width: 13%;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  margin: 30px 0px;
+  padding-left: 25px;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.4s ease-in-out;
+}
+
+.loggin > div > p {
+  font-weight: 600;
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
+  color: white;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 2;
+} */
+
+
+/* On hover */
+/* .loggin:hover {
+  background: #222;
+}
+
+.loggin:hover > p {
+  opacity: 0;
+}
+
+.loggin:hover::after {
+  transform: translateX(-50%);
+  opacity: 1;
+} */
+
+/* ------------Body-------------- */
+
+/* .search_Box {
+  margin: 100px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search_Box > input,
+button {
+  padding: 15px;
+  outline: none;
+  border: none;
+}
+
+.search_Box > input {
+  max-width: 700px;
+  width: 700px;
+  height: 65px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: rgb(252, 228, 183);
+  outline: none;
+}
+.search_Box > input:focus {
+  border-color: orange;
+}
+
+.search_Box > button {
+  max-width: 170px;
+  width: 170px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  background: black;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: background 0.3s ease;
+}
+.search_Box > button:hover {
+  background: orange;
+  color: black;
+  cursor: pointer;
+}
+
+.restroCard_contanier {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 100px 20px;
+  padding: 60px 30px 60px 30px;
+  background: orange;
+  border-radius: 40px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.4);
+} */
+
+/* Restro image */
+/* .res_Detail {
+  margin: 25px;
+  width: 370px;
+  height: 422px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+/* applied hover effect to child .res_Detail only */
+/* .res_mainBody:hover .res_Detail {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.res_Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.res_Image > img {
+  border-radius: 30px;
+  padding: 12px;
+  width: 370px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restroCard_Desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0px 10px;
+}
+
+.down_desc {
+  margin: 18px 2px 0px 2px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.down_descRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  background-color: rgb(57, 184, 57);
+  border-radius: 20px;
+}
+
+.down_descRating > img {
+  width: 12px;
+  height: 12px;
+}
+
+.down_descRating > p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.top_pick {
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  background-color: orange;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* Feature */
+/* 
+.search_Box > button.topRatedRestro {
+  color: white;
+  background: black;
+  margin-left: 50px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+button.topRatedRestro:hover {
+  cursor: pointer;
+  outline: 1.5px solid orange;
+  outline-offset: 0px;
+} */

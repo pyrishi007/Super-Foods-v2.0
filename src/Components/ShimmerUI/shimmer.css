@@ -1,0 +1,121 @@
+/* Container for shimmer cards with orange theme */
+.restroCard_contanier-shimmer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 101px 20px !important;
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #ffa500, #ffcc70); /* soft warm orange gradient */
+  border-radius: 40px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Individual shimmer card */
+.shimmer-card {
+  margin: 25px;
+  width: 370px;
+  height: 422px;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, #ffc966, #ffb347); /* warm orange card gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shimmer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Shimmer effect for card, image, text */
+.shimmer,
+.shimmer-card,
+.shimmer-text {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff); /* warm shimmer */
+  border-radius: inherit;
+}
+
+.shimmer::after,
+.shimmer-card::after,
+.shimmer-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmerMove 1.8s infinite;
+}
+
+@keyframes shimmerMove {
+  0% { left: -200px; }
+  100% { left: 100%; }
+}
+
+/* Image placeholder */
+.shimmer-image {
+  width: 100%;
+  height: 300px; /* matches res_Image > img height */
+  border-radius: 20px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ffd699, #ffcc80, #ffd699); /* soft orange gradient */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text placeholders */
+.shimmer-text {
+  height: 16px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffecd1, #ffd699, #ffecd1); /* subtle warm gradient */
+}
+
+.shimmer-text.short {
+  width: 60%;
+}
+
+/* Optional subtle pulse animation */
+.shimmer-card, .shimmer-text, .shimmer-image {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.same{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.shimmer-search{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.shimmer-search-bar{
+  width: 800px;
+  height: 65px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffcc8066, #ffcc8066, #ffcc8066);
+  outline: none;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "super_foodv2.0",
+  "version": "1.0.0",
+  "description": "This app is based on food delivery ",
+  "scripts": {
+    "start": "parcel Index.html -p 5000",
+    "build": "parcel build Index.html",
+    "test": "jest"
+  },
+  "author": "super_foods",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "autoprefixer": "^10.4.22",
+    "parcel": "^2.13.3",
+    "postcss": "^8.5.6",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.18"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "6.11.2",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
+}

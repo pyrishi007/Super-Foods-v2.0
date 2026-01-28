@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: fixed;      /* cover entire viewport */
+  top: 0;               /* start from top of screen */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;   
+}
+
+.merge-text {
+  font-size: 100px;
+  font-weight: 900;
+  color: #2d1f0f;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8; /* dimmed */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.merge-text {
+  animation: glowPulse 1.7s infinite ease-in-out; /* faster pulsing */
+  animation-delay: 4s; /* start after 4s */
+}
+
+.pizza {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 50px;
+  left: -100px; /* start off-screen left */
+}

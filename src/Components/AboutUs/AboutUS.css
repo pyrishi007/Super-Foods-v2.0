@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=New+Amsterdam&display=swap");
+
+.AboutUs-page {
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.AboutUs-page img {
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.page {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  animation: fadeInUp 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#page-2 {
+  height: 120vh; /* full viewport height */
+  background-image: url("../../Assets/Yellow Red and Green Playful Junk Food Presentation.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+.upper-card-contanier {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-carousel {
+  height: 600px !important;
+  width: 100%;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upper-whole-carousel-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 455px;
+  margin-top: 30px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.943);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: url("../../Assets/world vegetarian day social media template (Flyer).png")
+    center/cover no-repeat;
+}
+
+.upper-whole-carousel-card:hover .card-image {
+  animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  20% {
+    transform: translate(-6px, 0) rotate(-6deg);
+  }
+  40% {
+    transform: translate(10px, 0) rotate(4deg);
+  }
+  60% {
+    transform: translate(-8px, 0) rotate(-3deg);
+  }
+  80% {
+    transform: translate(8px, 0) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+.upper-whole-carousel-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.943);
+}
+
+.whole-carousel-card > .img-card {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+
+.card-image {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background-color: rgba(241, 205, 161, 0.35);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25),
+    inset 2px 7px 10px rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.card-info {
+  height: 200px;
+  margin: 20px 15px 0px 15px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  border: 2px solid orange;
+  background-color: #0e0b29a6;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-info:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  border-color: #ff4747;
+}
+
+.card-info > #text {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-info > #info {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+}
+
+.card-info:hover > #info {
+  opacity: 1;
+}
+.slick-list {
+  margin-left: 20px;
+  width: 1750px;
+  height: 500px;
+}
+.slick-slide > div {
+  margin: 0 20px;
+}
+
+.slick-next:before {
+  color: black;
+}
+
+.slick-prev:before {
+  color: black;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  /* margin-right: 25px !important; */
+  color: orange !important;
+  opacity: 1 !important;
+  font-size: 30px !important;
+}
+.slick-prev:before {
+  margin-left: -30px !important;
+}
+.slick-next:before {
+  margin-right: -30px !important;
+}
+
+.slick-dots {
+  /* font-size: ; */
+  margin: -40px !important;
+}
