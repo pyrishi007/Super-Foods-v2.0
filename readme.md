@@ -1,111 +1,241 @@
-# Swiggy API for testing 
-// This is Async - function  which is used to fetch the Async request 
-const swiggy_Api = async function(){
-  
-    // Swiggy API with await for the response
-    //Here fetch will just give the respone, rather if the response is ok or not .then will catch the reponse so it important to make a checking critia 
-    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") 
+# 🍔 Super Foods v2.0
 
-// catching the request with then and catch
-    .then(async(response)=>{
-       
-        // It will check if the reponse with in the <=200 and >=300 ! means opposite
-        // If The response is not ok then this is throw a error
-        //If there will be error then this will jump this error to the catch
-        if(!response.ok){
-            throw new Error("Reponse is nt ok")
-        }
-        
-        //If the response is OK then it is gonna covert the respone into JSON format
-         return await response.json()
+**Super Foods v2.0** is a modern food delivery frontend web application inspired by Swiggy.  
+Built using **React**, styled with **Tailwind CSS**, powered by **Redux** for state management, integrated with the **Swiggy API** for restaurant/menu data, and secured with **Firebase Authentication**.
 
-    }).then((data)=>{
+## 📂 Folder Structure
 
-        //Data which is comming from the reponse will be displayed here
-         console.log(data);
-    }).catch((data)=>{
+Lets understand my folder structure.
+SUPER_FOODV2.0/
+│
+├── node_modules/
+│
+├── src/
+│   ├── api/
+│   │   └── swiggy.js
+│   │
+│   ├── Assets/
+│   │
+│   ├── Components/
+│   │   ├── AboutUs/
+│   │   │   ├── AboutUS.css
+│   │   │   ├── AboutUs.jsx
+│   │   │   └── Error / RouteError/
+│   │   │       └── RouteError.jsx
+│   │   │
+│   │   ├── Footer/
+│   │   │   ├── footer.css
+│   │   │   └── Footer.jsx
+│   │   │
+│   │   ├── MenuPage/
+│   │   │   ├── Banner.jsx
+│   │   │   ├── MenuCardCategories.jsx
+│   │   │   ├── MenuCategoriesItems.jsx
+│   │   │   └── MenuPage.jsx
+│   │   │
+│   │   ├── Navigation/
+│   │   │   ├── Header.jsx
+│   │   │   └── Navigation.jsx
+│   │   │
+│   │   ├── PreLoader/
+│   │   │   ├── preloader.css
+│   │   │   └── PreLoader.jsx
+│   │   │
+│   │   ├── RestroCard/
+│   │   │   ├── Restrocard.jsx
+│   │   │   └── Search.jsx
+│   │   │
+│   │   ├── ShimmerUI/
+│   │   │   ├── shimmer.css
+│   │   │   └── Shimmer.jsx
+│   │   │
+│   │   ├── TopRatedRestro/
+│   │   │   └── TopRatedRestro.jsx
+│   │   │
+│   │   ├── UserProfile/
+│   │   │   └── UserClass.jsx
+│   │   │
+│   │   └── Body.jsx
+│   │
+│   ├── HOCS/
+│   │   └── withLabel.jsx
+│   │
+│   ├── Hooks/
+│   │   ├── isOnline.jsx
+│   │   ├── useBody.jsx
+│   │   ├── useRestroMenu.jsx
+│   │   └── useRouteError.jsx
+│   │
+│   ├── Pipeline/
+│   │   └── useState.jsx
+│   │
+│   ├── Store/
+│   │   └── constants.jsx
+│   │
+│   ├── utils/
+│   │   ├── constants.jsx
+│   │   └── SharedUtilityBasedInfo.jsx
+│   │
+│   └── App.jsx
+│
+├── .gitignore
+├── .postcssrc.json
+├── Index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── Style.css
+└── tailwind.config.js
 
-        // It is gonna catch the response
-       console.log(data);
-    })
+## 🚀 Tech Stack
 
-}
+- ⚛️ **React** – Frontend Library  
+- 🎨 **Tailwind CSS** – Styling & Responsive UI  
+- 🔥 **Firebase** – Authentication (Login / Signup)  
+- 🛒 **Redux** – State Management  
+- 🟢 **Node.js** – Runtime Environment  
+- 📦 **npm** – Package Manager  
+- 🍽️ **Swiggy API** – Restaurant & Menu Data  
+- ⚡ **Parcel** – Bundler  
+- 🧩 **Babel** – JavaScript Compiler  
+- 🔀 **React Router DOM** – Routing & Navigation  
+- 🌐 **Fetch API** – API Calls  
+- 🛠️ **Git & GitHub** – Version Control  
+
+## ✨ Features (Detailed)
+
+### 🏠 1) Restaurant Listing Page (Home)
+- Displays restaurants dynamically by fetching data from Swiggy API
+- Uses reusable **Restaurant Card UI**
+- Includes restaurant image, name, cuisines, rating, and total ratings
+
+**Code Highlights**
+- Restaurant cards rendered using `.map()`
+- Uses Swiggy CDN images via `CDN_LINK + cloudinaryImageId`
+
+---
+
+### 🔍 2) Search Restaurants
+- Search bar allows users to search restaurants
+- Controlled input state (`inputText`)
+- Search button triggers search logic (`handleSearch`)
+
+---
+
+### ⭐ 3) Top Rated Restaurant Filter
+- “Top Restro” button filters/sorts restaurants by rating
+- Clean reusable filter component (`TopRatedRestro`)
+
+---
+
+### 🏷️ 4) Promoted Badge using Higher Order Component (HOC)
+- Restaurants with rating `>= 4.5` show a **Promoted** label
+- Implemented using HOC: `withLabel(RestroCard)`
+- Keeps UI enhancement reusable without modifying original component
+
+---
+
+### 💀 5) Shimmer / Skeleton Loader
+- Displays skeleton UI while API data loads
+- Grid shimmer placeholders for restaurants
+- Smooth loading effect using Tailwind animations
+
+---
+
+### 🎬 6) GSAP Animated Preloader
+- Beautiful intro animation using **GSAP Timeline**
+- Uses `forwardRef` + `useImperativeHandle` to expose a `fadeOut()` function
+- Adds a polished UI experience
+
+---
+
+### 📶 7) Online/Offline Detection
+- Uses custom hook (`status()` from `isOnline.jsx`)
+- Shows fallback UI when user is offline  
+> *(You mentioned: TODO - improve offline error screen)*
+
+---
+
+### 🍽️ 8) Restaurant Menu Page (Dynamic)
+- Clicking a restaurant navigates to menu page using:
+- Menu data fetched dynamically with restaurant id
+- Menu categories filtered using Swiggy API response `@type`
+
+---
+
+### 📋 9) Menu Categories & Menu Items Rendering
+- Filters menu categories:
+- Displays food items with:
+✅ name  
+✅ price (converted to ₹)  
+✅ description  
+✅ food image  
+✅ Add button UI (cart-ready)
+
+---
+
+### 🧭 10) Routing & Layout (React Router v6)
+- Routing implemented using `createBrowserRouter`
+- Uses common layout:
+✅ Header  
+✅ Footer  
+✅ Outlet (page content)
+
+✅ Lazy loading applied for:
+- About page
+- Menu page
+
+---
+
+### 🚨 11) Custom Route Error Page
+- Custom error page using your `useRouteError` hook
+- Shows:
+✅ status code  
+✅ status text  
+- Better UX than default error page
+
+---
+
+### 🌐 12) API Layer with Error Handling
+Separate API file to keep fetching logic clean:
+
+- `fetchRestrouantshApi()` → restaurant list API  
+- `fetchRestrouantsMenu_Api(resID)` → menu API  
+
+Includes:
+✅ `try/catch` error handling  
+✅ returns fallback `{ error: true, message: "Fatal Response" }` on error  
+
+---
+
+## 🧭 Routes
+
+| Route | Page |
+|------|------|
+| `/` | Home (Restaurant Listing) |
+| `/About` | About Page (Lazy Loaded) |
+| `/restaurant/Menupage/:resID` | Restaurant Menu Page |
+| `/UserProfile.info` | User Profile Page |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone Repository
+git clone https://github.com/pyriShi007/Super-Foods-v2.0.git
 
 
-swiggy_Api()
+# git important cmds
+
+## Seprate Folder 
+- cd Super-Foods-v2.0
+
+## To install the Project
+- npm install
+
+## To run the Project
+- npm start
 
 
-TRIAL and ERROR finding's
-You have a space between .res_mainBody and :hover.
-👉 That means “any element inside .res_mainBody when hovered”, not just .res_mainBody itself.
-That’s why children are also getting scaled.
-
-.res_mainBody :hover { ---> inhertied to all child
-  cursor: pointer;
-  transform: scale(1.2) no;
-} 
-
-🔹 “CONFIG-DRIVEN UI”
-  # A config-driven UI means the UI is not hardcoded in your components — instead, it is generated dynamically based on a configuration object (JSON, JS object, etc.).
-
-🔹 Why use Config-Driven UI?
-  # Flexibility → You don’t need to change code every time; just update config.
-  # Scalability → Easy to build large, dynamic forms, menus, dashboards, etc.
-  # Reusability → Same component can render different UIs based on config.
-  # Low maintenance → Non-developers (or backend) can drive UI by just changing config JSON.
-
-# Good industry pratices 
- - Always make seprate folder for component
-   > Start the file name with capital letter with same name as the component.
-   > Make different folder for use case - seniro. eg Assets, utlis, components
-   > utils folder will have the mock_data and constants into it
-   > Name the constants variable in captial letter as per GIP
-
-
-P-0.01
-Object destructuring
-  - On the fly
-  - Manually 
-
-> Manually 
-  - for Object de structuring we should be using {}
-
-   # Inside the Restro card passed porps(properties) 
-        <Restro_Card restroName = "KFC" cuisine = "bucket , burger , nuget"/>
-        const Restro_Card = (restro_info) => {
-        const {restroName, cuisine } = restro_info
-       
-        - output
-            restroName ---> KFC
-            cuisine ---> "bucket , burger , nuget"
-
-       # If you want to chnage the name then 
-        const {restroName, cuisine:restroCuisine } = restro_info
-
-        - output
-            restroName ---> KFC
-            restroCuisine ---> "bucket , burger , nuget"
-        return (
-            //JSX
-        );
-
-        };
-        
-> On the fly
-  - for Object de structuring we should be using {}
-   # Inside the Restro card passed porps(properties) 
-        <Restro_Card restroName = "KFC" cuisine = "bucket , burger , nuget"/>
-        const Restro_Card = ({restroName ,cuisine}) => {
-       
-        - output
-            restroName ---> KFC
-            cuisine ---> "bucket , burger , nuget"
- 
-    #  Here if you want to change the name then do same cuisine:restroCuisine
-        return (
-            //JSX
-        );
-
-        };
-
-P-0.02
+👨‍💻 Author
+Made with ❤️ by Rishi aka Rohit Gorain
