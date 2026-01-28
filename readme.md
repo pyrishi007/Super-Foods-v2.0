@@ -6,7 +6,7 @@ Built using **React**, styled with **Tailwind CSS**, powered by **Redux** for st
 ## 📂 Folder Structure
 
 Lets understand my folder structure.
-```bash
+
 SUPER_FOODV2.0/
 │
 ├── src/
@@ -57,7 +57,6 @@ SUPER_FOODV2.0/
 ├── Style.css
 └── tailwind.config.js
 
----
 
 ## 🚀 Tech Stack
 
