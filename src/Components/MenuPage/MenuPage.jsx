@@ -12,15 +12,14 @@ const MenuPage = () => {
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
   );
 
-  //Testing
-  // console.log(menuItems);
-
   return loading ? (
     <Shimmer />
   ) : (
     <div className="menu-container px-4 py-10 bg-white">
       <Banner prop={bannerInfo} />
-      {menuItems.map((data) => {
+      {menuItems.map((data, index) => {
+        console.log(index);
+        
         //Key
         const { categoryId } = data?.card?.card || {};
 

@@ -123,7 +123,6 @@ SUPER_FOODV2.0/
 ### 📶 7) Online/Offline Detection
 - Uses custom hook (`status()` from `isOnline.jsx`)
 - Shows fallback UI when user is offline  
-> *(You mentioned: TODO - improve offline error screen)*
 
 ---
 
@@ -196,7 +195,7 @@ Includes:
 git clone https://github.com/pyriShi007/Super-Foods-v2.0.git
 
 
-# git important cmds
+#### git important cmds
 
 ## Seprate Folder 
 - cd Super-Foods-v2.0

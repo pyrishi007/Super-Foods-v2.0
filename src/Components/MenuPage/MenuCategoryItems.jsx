@@ -1,8 +1,6 @@
 import { CDN_LINK } from "../../utils/constants";
 
 const MenuCategoryItems = (props) => {
-  //Testing
-  console.log(props);
 
   return (
     <div>
