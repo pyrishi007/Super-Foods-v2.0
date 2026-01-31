@@ -150,7 +150,6 @@ SUPER_FOODV2.0/
 ✅ Header  
 ✅ Footer  
 ✅ Outlet (page content)
-
 ✅ Lazy loading applied for:
 - About page
 - Menu page
@@ -205,7 +204,6 @@ git clone https://github.com/pyriShi007/Super-Foods-v2.0.git
 
 ## To run the Project
 - npm start
-
 
 👨‍💻 Author
 Made with ❤️ by Rishi aka Rohit Gorain

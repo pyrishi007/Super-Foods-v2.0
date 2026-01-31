@@ -7,7 +7,8 @@ const MenuCardCategories = (props) => {
 
   //Extractring Data
   const { title, itemCards } = props?.data?.card?.card || {};
-
+ 
+  //Event handler 
   const handleClick = () => {
     setAccordions(!Accordions);
   };
@@ -40,7 +41,7 @@ const MenuCardCategories = (props) => {
       </div>
 
       {/* Accordion Body */}
-      {Accordions && (
+      {props.showItem && (
         <div className="bg-white rounded-md">
           <MenuCategoryItems data={itemCards} />
         </div>

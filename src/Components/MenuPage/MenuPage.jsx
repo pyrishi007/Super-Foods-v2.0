@@ -23,7 +23,8 @@ const MenuPage = () => {
         //Key
         const { categoryId } = data?.card?.card || {};
 
-        return <MenuCardCategories data={data} key={categoryId} />;
+        //Controlled component 
+        return <MenuCardCategories data={data} key={categoryId} showItem = {index != 4 ? true : false} />;
       })}
     </div>
   );
