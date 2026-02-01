@@ -2,9 +2,12 @@ import Shimmer from "../ShimmerUI/Shimmer";
 import Banner from "./Banner";
 import useRestroMenu from "../../Hooks/useRestroMenu";
 import MenuCardCategories from "./MenuCardCategories";
+import { useState } from "react";
 
 const MenuPage = () => {
   const { loading, bannerInfo, menuCategories } = useRestroMenu();
+
+  const [ showItemIndex, setItemIndex ] = useState(1);
 
   const menuItems = menuCategories.filter(
     (eachCategories) =>
@@ -23,11 +26,19 @@ const MenuPage = () => {
         //Key
         const { categoryId } = data?.card?.card || {};
 
-        //Controlled component 
-        return <MenuCardCategories data={data} key={categoryId} showItem = {index != 4 ? true : false} />;
+        //Controlled component
+        return (
+          <MenuCardCategories
+            data={data}
+            key={categoryId}
+            showItem={(index === showItemIndex  && true ,console.log(index))}
+            setItemIndex={() => setItemIndex(index, console.log(index)
+            )}
+          />
+        );
       })}
     </div>
-  );
+  );  
 };
 
 export default MenuPage;

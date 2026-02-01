@@ -1,21 +1,15 @@
 import MenuCategoryItems from "./MenuCategoryItems";
 import { useState } from "react";
 
-const MenuCardCategories = (props) => {
-  //Accordions
-  const [Accordions, setAccordions] = useState(false);
-
+const MenuCardCategories = ({data, showItem, setItemIndex}) => {
   //Extractring Data
-  const { title, itemCards } = props?.data?.card?.card || {};
+  const { title, itemCards } = data?.card?.card || {};
  
   //Event handler 
   const handleClick = () => {
-    setAccordions(!Accordions);
+    setItemIndex()
   };
 
-  //testing 
-  console.log(title);
-  
 
   return (
     <div className="w-6/12 m-auto px-5 py-2">
@@ -33,7 +27,7 @@ const MenuCardCategories = (props) => {
 
         <span
           className={`text-gray-700 transition-transform duration-200 ${
-            Accordions ? "rotate-180" : ""
+            showItem ? "rotate-180" : ""
           }`}
         >
           ⌄
@@ -41,7 +35,7 @@ const MenuCardCategories = (props) => {
       </div>
 
       {/* Accordion Body */}
-      {props.showItem && (
+      {showItem && (
         <div className="bg-white rounded-md">
           <MenuCategoryItems data={itemCards} />
         </div>
@@ -49,4 +43,6 @@ const MenuCardCategories = (props) => {
     </div>
   );
 };
+
+
 export default MenuCardCategories;
