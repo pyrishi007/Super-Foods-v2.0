@@ -1,5 +1,5 @@
 import MenuCategoryItems from "./MenuCategoryItems";
-import { useState } from "react";
+
 
 const MenuCardCategories = ({data, showItem, setItemIndex}) => {
   //Extractring Data
@@ -8,6 +8,8 @@ const MenuCardCategories = ({data, showItem, setItemIndex}) => {
   //Event handler 
   const handleClick = () => {
     setItemIndex()
+    console.log(showItem);
+    
   };
 
 
