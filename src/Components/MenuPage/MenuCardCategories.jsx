@@ -1,17 +1,14 @@
+import { useEffect } from "react";
 import MenuCategoryItems from "./MenuCategoryItems";
 
-
-const MenuCardCategories = ({data, showItem, setItemIndex}) => {
+const MenuCardCategories = ({ index, data, showItem, setItemIndex }) => {
   //Extractring Data
   const { title, itemCards } = data?.card?.card || {};
- 
-  //Event handler 
-  const handleClick = () => {
-    setItemIndex()
-    console.log(showItem);
-    
-  };
 
+  //Event handler
+  const handleClick = () => {
+    setItemIndex();
+  };
 
   return (
     <div className="w-6/12 m-auto px-5 py-2">
@@ -45,6 +42,5 @@ const MenuCardCategories = ({data, showItem, setItemIndex}) => {
     </div>
   );
 };
-
 
 export default MenuCardCategories;

@@ -7,7 +7,7 @@ import { useState } from "react";
 const MenuPage = () => {
   const { loading, bannerInfo, menuCategories } = useRestroMenu();
 
-  const [ showItemIndex, setItemIndex ] = useState(0);
+  const [showItemIndex, setItemIndex] = useState(0);
 
   const menuItems = menuCategories.filter(
     (eachCategories) =>
@@ -21,24 +21,24 @@ const MenuPage = () => {
     <div className="menu-container px-4 py-10 bg-white">
       <Banner prop={bannerInfo} />
       {menuItems.map((data, index) => {
-        console.log(index);
-        
         //Key
         const { categoryId } = data?.card?.card || {};
 
         //Controlled component
         return (
           <MenuCardCategories
+            index={index}
             data={data}
             key={categoryId}
-            showItem={index === showItemIndex ? true : false}
-            setItemIndex={() => setItemIndex(index, console.log(index)
-            )}
-          /> 
+            showItem={index == showItemIndex && true }
+            setItemIndex={() =>
+              setItemIndex(index == showItemIndex ? null : index)
+            }
+          />
         );
       })}
     </div>
-  );  
+  );
 };
 
 export default MenuPage;
