@@ -6,6 +6,8 @@ import Footer from "./Components/Footer/Footer.jsx";
 import UserProfile from "./Components/UserProfile/UserCLass.jsx";
 import RouteError from "./Components/ErrorUI/RouteError/RouteError.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store.js";
 
 //Implementing Lazy-load
 const AboutUS = lazy(() => import("./Components/AboutUs/AboutUS.jsx"));
@@ -16,9 +18,11 @@ const AppLayout_SuperFood = () => {
   return (
     <>
       <React.StrictMode>
-        <Header />
-        <Outlet />
-        <Footer />
+        <Provider store={store}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </Provider>
       </React.StrictMode>
     </>
   );

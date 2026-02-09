@@ -7,10 +7,6 @@ import { Search } from "./Search/Search.jsx";
 import { TopRatedRestro } from "./TopRatedRestro/TopRatedRestro.jsx";
 import { status } from "../Hooks/isOnline.jsx";
 
-
- 
-
-
 //RestaurantCard- Body
 const Body = () => {
   //Custom Hook - useBody

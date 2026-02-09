@@ -1,6 +1,14 @@
 import { CDN_LINK } from "../../utils/constants";
 
+import { addToCart } from "../../redux/features/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 const MenuCategoryItems = (props) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart());
+  };
 
   return (
     <div>
@@ -35,7 +43,10 @@ const MenuCategoryItems = (props) => {
                 alt={name}
               />
 
-              <button className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 py-1.5 rounded-lg bg-white text-green-700 text-sm font-semibold border border-green-600 shadow-md hover:bg-green-600 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 font-mono">
+              <button
+                onClick={handleAddToCart}
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 py-1.5 rounded-lg bg-white text-green-700 text-sm font-semibold border border-green-600 shadow-md hover:bg-green-600 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 font-mono"
+              >
                 Add
               </button>
             </div>

@@ -13,9 +13,7 @@ export const useBody = () => {
 
   //Search logic
   const [inputText, setInputText] = useState("");
- 
-  console.log(restro);
-  
+   
 
   //Swiggy API handle
   useEffect(() => {
