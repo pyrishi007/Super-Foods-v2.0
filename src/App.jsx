@@ -8,6 +8,7 @@ import RouteError from "./Components/ErrorUI/RouteError/RouteError.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
+import Cart from "./Components/Cart/Cart.jsx";
 
 //Implementing Lazy-load
 const AboutUS = lazy(() => import("./Components/AboutUs/AboutUS.jsx"));
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "UserProfile.info",
         element: <UserProfile name={"rishi"} />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },
