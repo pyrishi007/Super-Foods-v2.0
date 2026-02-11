@@ -1,13 +1,17 @@
+import { useDispatch } from "react-redux";
 import { CDN_LINK } from "../../utils/constants";
-
+import { removeItem } from "../../redux/features/cartSlice";
 
 const EachCartProduct = (eachCartitem) => {
-
-
   const { category, imageId, name, price, defaultPrice, id } =
     eachCartitem.prop.card.info || {};
-    
-    
+
+  const dispatch = useDispatch();
+
+  const HandleRemovefromCart = () => {
+    dispatch(removeItem(id));
+  };
+
   return (
     <div className="w-full bg-white rounded-2xl shadow-xl px-6 py-5 flex items-center gap-6 max-w-5xl mx-auto space-y-5 my-2">
       {/* checkbox */}
@@ -45,7 +49,10 @@ const EachCartProduct = (eachCartitem) => {
       </div>
 
       {/* REMOVE */}
-      <button className="text-md font font-semibold bg-red-500 px-5 py-2 text-white rounded-xl shadow-md cursor-pointer active:scale-110 transition">
+      <button
+        onClick={HandleRemovefromCart}
+        className="text-md font font-semibold bg-red-500 px-5 py-2 text-white rounded-xl shadow-md cursor-pointer active:scale-110 transition"
+      >
         Remove
       </button>
     </div>

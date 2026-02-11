@@ -3,9 +3,6 @@ import { useSelector } from "react-redux";
 
 const Navigation = () => {
   const { length } = useSelector((store) => store.cart.cartItem);
-  const { emptyCart } = useSelector((store) => store.cart);
-  console.log(emptyCart);
-  
 
   return (
     <>
