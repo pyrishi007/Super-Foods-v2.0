@@ -1,87 +1,126 @@
-import "../Footer/footer.css";
 import facebook from "../../Assets/facebook.png";
 import instagram from "../../Assets/instagram.png";
 import twitter from "../../Assets/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-logo">
-          <div className="logo-with-icons">
-            <h2>Super Food's</h2>
-            <div className="footer-icons">
-              {/* Placeholder for orange icons */}
-              <span className="icon-placeholder"></span>
-              <span className="icon-placeholder"></span>
-              <span className="icon-placeholder"></span>
-            </div>
-          </div>
-          <div className="footer-icons-2">
-            {/* Placeholder for orange icons */}
+    <footer className=" font bg-gray-900 text-gray-300 mt-24">
+      {/* MAIN */}
+      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-12">
+        {/* BRAND */}
+        <div>
+          <h2 className="text-3xl font-bold text-white mb-5 tracking-wide">
+            Super <span className="text-amber-400">Food's</span>
+          </h2>
 
-            <img src={facebook} alt="" className="facebook" />
+          <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
+            Fresh meals crafted with quality ingredients and delivered with
+            care. Our goal is to bring comfort, taste, and convenience together
+            in every order you place.
+          </p>
 
-            <img src={instagram} alt="" />
-
-            <img src={twitter} alt="" />
-          </div>
-          <div className="footer-section-moreInfo">
-            <h3>Why Choose Us?</h3>
-            <ul>
-              <li> Fresh Ingredients Daily</li>
-              <li> Super Fast Delivery</li>
-              <li> Home-style Cooking</li>
-              <li> Healthy & Nutritious</li>
-            </ul>
+          {/* SOCIAL */}
+          <div className="flex gap-4 mt-6">
+            <img
+              src={facebook}
+              className="w-9 h-9 p-2 bg-gray-800 rounded-full shadow-sm hover:bg-amber-400 hover:scale-110 transition duration-200"
+            />
+            <img
+              src={instagram}
+              className="w-9 h-9 p-2 bg-gray-800 rounded-full shadow-sm hover:bg-amber-400 hover:scale-110 transition duration-200"
+            />
+            <img
+              src={twitter}
+              className="w-9 h-9 p-2 bg-gray-800 rounded-full shadow-sm hover:bg-amber-400 hover:scale-110 transition duration-200"
+            />
           </div>
         </div>
 
-        <div className="footer-container">
-          {/* Column 1 - About */}
-          <div className="footer-section">
-            <h3>About Us</h3>
-            <p>
-              At Super Food's, we bring wholesome, fresh meals crafted with
-              care. Healthy, delicious, and convenient  every bite should feel
-              special.
+        {/* WHY US */}
+        <div>
+          <h3 className="text-white font-semibold text-lg mb-5 border-b border-amber-400 pb-1 w-fit">
+            Why Choose Us
+          </h3>
+
+          <ul className="space-y-3 text-gray-400 text-sm">
+            <li className="hover:text-amber-400 transition">
+              Fresh Ingredients Daily
+            </li>
+            <li className="hover:text-amber-400 transition">
+              Fast & Reliable Delivery
+            </li>
+            <li className="hover:text-amber-400 transition">
+              Home-style Cooking
+            </li>
+            <li className="hover:text-amber-400 transition">
+              Healthy & Nutritious Meals
+            </li>
+          </ul>
+        </div>
+
+        {/* LINKS */}
+        <div>
+          <h3 className="text-white font-semibold text-lg mb-5 border-b border-amber-400 pb-1 w-fit">
+            Quick Links
+          </h3>
+
+          <ul className="space-y-3 text-gray-400 text-sm">
+            <li className="hover:text-amber-400 cursor-pointer transition">
+              Home
+            </li>
+            <li className="hover:text-amber-400 cursor-pointer transition">
+              Menu
+            </li>
+            <li className="hover:text-amber-400 cursor-pointer transition">
+              About Us
+            </li>
+            <li className="hover:text-amber-400 cursor-pointer transition">
+              Offers
+            </li>
+            <li className="hover:text-amber-400 cursor-pointer transition">
+              Contact
+            </li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        <div>
+          <h3 className="text-white font-semibold text-lg mb-5 border-b border-amber-400 pb-1 w-fit">
+            Contact
+          </h3>
+
+          <div className="space-y-3 text-sm text-gray-400">
+            <p className="hover:text-amber-400 transition">
+              📞 +91 82108 74695
+            </p>
+            <p className="hover:text-amber-400 transition">
+              ✉️ gorai123n@gmail.com
+            </p>
+            <p className="hover:text-amber-400 transition">
+              📍 Bangalore, India
             </p>
           </div>
 
-          {/* Column 2 - Quick Links */}
-          <div className="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li>Home</li>
-              <li>Menu</li>
-              <li>About Us</li>
-              <li>Offers</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Contact */}
-          <div className="footer-section">
-            <h3>Contact</h3>
-            <p>Phone: +91 82108 74695</p>
-            <p>Email: gorai123n@gmail.com</p>
-            <p>Address: 21, Food Street, Bangalore, India</p>
-            <p>
-              We are here to ensure your meals are delivered with care and love.
-            </p>
-          </div>
-
-          {/* Column 4 - Orange Highlights / Features */}
+          <p className=" text-gray-500 text-xs mt-5 max-w-xs leading-relaxed">
+            We aim to deliver every meal fresh, warm, and on time so you can
+            enjoy a seamless dining experience from start to finish.
+          </p>
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="footer-bottom">
+      {/* DIVIDER */}
+      <div className="border-t border-gray-800"></div>
+
+      {/* BOTTOM */}
+      <div className="max-w-7xl mx-auto px-6 py-7 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-3">
         <p>
-          © {new Date().getFullYear()} Super Food's. All Rights Reserved. <br />
-          Disclaimer: All content, images, and information on this site are for
-          informational purposes only. Prices and offers are subject to change.
-          Super Food's is not responsible for any discrepancies or errors.
+          © {new Date().getFullYear()}
+          <span className="text-amber-400 font-medium"> Super Food's</span>. All
+          rights reserved.
+        </p>
+
+        <p className="text-xs text-gray-600">
+          Prices, availability, and offers may change without notice.
         </p>
       </div>
     </footer>

@@ -12,13 +12,16 @@ const MenuCategoryItems = (props) => {
 
   return (
     <div>
-      {props?.data.map((eachItem) => {
+      {props?.data.map((eachItem) => 
+    {
+
+      
         //Extractring Data
-        const { name, price, description, imageId } =
+        const { name, price, description, imageId, defaultPrice} =
           eachItem?.card?.info || {};
 
         return (
-          <div className="w-12/12 m-auto flex items-center justify-between border-b border-gray-200/70 bg-white p-2 text-left">
+          <div className=" font w-12/12 m-auto flex items-center justify-between border-b border-gray-200/70 bg-white p-2 text-left">
             <div className="w-8/12">
               <div className="flex items-baseline">
                 <p className="text-lg  font-bold text-gray-900 tracking-wide leading-snug">
@@ -26,13 +29,13 @@ const MenuCategoryItems = (props) => {
                 </p>
 
                 <span className="px-2 text-lg font-semibold text-gray-700">
-                  - ₹{price / 100}
+                  - ₹{(price || defaultPrice) / 100}
                 </span>
               </div>
 
-              <div className="text-sm font-medium text-gray-500 leading-relaxed">
-                {description}
-              </div>
+              <div className="text-sm font-medium text-gray-500 leading-relaxed line-clamp-2">
+  {description}
+</div>
             </div>
 
             {/* Image + Button */}

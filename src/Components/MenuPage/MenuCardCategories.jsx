@@ -11,21 +11,31 @@ const MenuCardCategories = ({ index, data, showItem, setItemIndex }) => {
   };
 
   return (
-    <div className="w-6/12 m-auto px-5 py-2">
-      {/* Accordion Header */}
+    <div className=" font w-6/12 m-auto px-5 py-3">
+      {/* HEADER */}
       <div
         onClick={handleClick}
-        className="flex items-center justify-between cursor-pointer rounded-lg  px-3 py-2 my-2 border-b-2 border-gray-200 "
+        className="flex items-center justify-between cursor-pointer rounded-xl px-4 py-4 my-4 
+    bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
       >
-        <p className="font-bold text-gray-900 text-2xl">
-          {title}
-          <span className="ml-2 text-lg font-bold text-gray-700">
-            ({itemCards.length})
-          </span>
-        </p>
+        <div className="flex flex-col">
+          {/* TITLE */}
+          <p className="font-semibold text-amber-600 text-2xl">
+            {title}
+            <span className="ml-2 text-xl  font-medium  text-gray-400">
+              ({itemCards.length} items)
+            </span>
+          </p>
 
+          {/* SUBTEXT */}
+          <p className="text-sm text-gray-950 mt-1">
+            Browse delicious options from this category
+          </p>
+        </div>
+
+        {/* ARROW */}
         <span
-          className={`text-gray-700 transition-transform duration-200 ${
+          className={`text-gray-500 text-xl transition-transform duration-300 ${
             showItem ? "rotate-180" : ""
           }`}
         >
@@ -33,9 +43,9 @@ const MenuCardCategories = ({ index, data, showItem, setItemIndex }) => {
         </span>
       </div>
 
-      {/* Accordion Body */}
+      {/* BODY */}
       {showItem && (
-        <div className="bg-white rounded-md">
+        <div className="bg-gray-50 rounded-xl border border-gray-200 p-3 shadow-inner">
           <MenuCategoryItems data={itemCards} />
         </div>
       )}

@@ -13,7 +13,6 @@ export const useBody = () => {
 
   //Search logic
   const [inputText, setInputText] = useState("");
-   
 
   //Swiggy API handle
   useEffect(() => {
@@ -32,16 +31,14 @@ export const useBody = () => {
     data();
   }, []);
 
-
   //Top rated restro
   const sortByRating = () => {
     const filteredRestroData = originalRestro.filter(
-      (data) => data.avgRatingString > 4.3
+       (data) => Number(data.avgRatingString) > 4.3,
     );
 
     setRestro(filteredRestroData);
   };
-
 
   //search Logic - Input & Search Button
   const handleText = (e) => {
@@ -63,5 +60,5 @@ export const useBody = () => {
     inputText,
     handleText,
     handleSearch,
-};
+  };
 };

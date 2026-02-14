@@ -4,53 +4,59 @@ import RestroCard from "./RestroCard/Restrocard.jsx";
 import { Link } from "react-router-dom";
 import { useBody } from "../Hooks/useBody.jsx";
 import { Search } from "./Search/Search.jsx";
-import { TopRatedRestro } from "./TopRatedRestro/TopRatedRestro.jsx";
 import { status } from "../Hooks/isOnline.jsx";
 
 //RestaurantCard- Body
 const Body = () => {
   //Custom Hook - useBody
-  const { restro, loading, sortByRating, inputText, handleText, handleSearch } =
-  useBody();
-  
+  const { restro, loading, inputText, handleText, handleSearch, sortByRating } =
+    useBody();
+
   //HOC - withlabel
   const NewRestroCard = withLabel(RestroCard);
-  
+
   //is_On
   const active = status();
 
   //TODO : Make a Offline Error Screen
-  if(!active) return <h1>Hello</h1>
-
-
+  if (!active) return <h1>Hello</h1>;
 
   //Shimmer UI
   return loading ? (
     <Shimmer />
   ) : (
     <div className="body ">
-      <div className="flex justify-between items-center gap-6 px-16 py-16 m-16 border bg-gradient-to-r from-orange-100 to-orange-300 rounded-2xl shadow-lg bg-gray-900 backdrop-blur">
-        <Search prop={{ inputText, handleText, handleSearch }} />
-        <TopRatedRestro prop={{ sortByRating }} />
+      <div className="flex justify-center items-center px-6 lg:px py-16 m-10 lg:m-16 rounded-2xl bg-white  border-gray-200">
+        <div className="w-full  flex flex-col items-center text-center gap-6">
+          {/* SEARCH BAR */}
+          <Search
+            prop={{ inputText, handleText, handleSearch, sortByRating }}
+          />
+        </div>
       </div>
 
-      <div className="flex justify-center flex-wrap">
-        {restro.map((eachRestro) => (
-          <Link
-            to={"/restaurant/Menupage/" + eachRestro.id}
-            key={eachRestro.id}
-          >
-            {eachRestro.avgRating >= 4.5 ? (
-              <NewRestroCard restroCardDetail={eachRestro} />
-            ) : (
-              <RestroCard restroCardDetail={eachRestro} />
-            )}
-          </Link>
-        ))}
+      <div className="w-full flex flex-col items-center text-right">
+        <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-800 text-center">
+          Discover <span className="text-amber-500">Restaurant's</span> near you
+        </h1>
+
+        <div className="flex justify-center flex-wrap gap-8 mt-10 px-6">
+          {restro.map((eachRestro) => (
+            <Link
+              to={"/restaurant/Menupage/" + eachRestro.id}
+              key={eachRestro.id}
+            >
+              {eachRestro.avgRating >= 4.5 ? (
+                <NewRestroCard restroCardDetail={eachRestro} />
+              ) : (
+                <RestroCard restroCardDetail={eachRestro} />
+              )}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
-
 };
 
 export default Body;

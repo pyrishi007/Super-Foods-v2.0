@@ -9,42 +9,54 @@ const RestroCard = (restaurantInfromation) => {
 
   return (
     <div>
-      <div className="w-[360px] border shadow-lg rounded-xl m-10 hover:shadow-xl rounded-xl hover:scale-95 transition-transform duration-200 ">
-        <div className=" relative">
-          <label
-            className="absolute font-mono top-52 -right-3 text-white text-xs px-5 py-1 bg-gradient-to-r from-violet-600 via-rose-500 to-amber-400 rounded-[6px_0px_6px_6px] shadow
-  "
+      <div className=" font w-[360px] bg-white border border-gray-200 rounded-2xl m-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div className="relative">
+          <span
+            className="absolute top-48 right-4 text-white text-xs px-4 py-1 rounded-md 
+      bg-gradient-to-r from-violet-600 via-rose-500 to-amber-400 shadow-md font-medium"
           >
-            {totalRatingsString} Rating
-          </label>
+            {totalRatingsString} Reviews
+          </span>
         </div>
 
-        <div className="w-full">
+        <div className="w-full overflow-hidden rounded-t-2xl">
           <img
             src={restroImage + cloudinaryImageId}
-            alt="Image not found"
-            className="w-full h-60 rounded-lg object-cover"
+            alt="restaurant"
+            className="w-full h-60 object-cover hover:scale-105 transition duration-300"
           />
         </div>
 
-        <div className="p-4">
-          <h3 className="font-bold  text-xl text-gray-700 truncate">{name}</h3>
+        <div className="p-5 space-y-2">
+          <h3 className="font-semibold text-xl text-gray-900 truncate">
+            {name}
+          </h3>
 
-          <p className="text-sm font-semibold text-gray-500 truncate">
+          <p className="text-sm text-gray-500 truncate">
             {cuisines?.join(", ")}
           </p>
+
+          <div className="flex items-center justify-between text-xs text-gray-500 pt-2">
+            <span className=" px-2 py-1 rounded-xl bg-gray-600 text-white text-sm font-mono shadow-md hover:scale-105 active:scale-95 transition">
+              ⏱ 30–40 mins
+            </span>
+            <span>💰 ₹300 for two</span>
+          </div>
         </div>
 
-        <div className="flex justify-between items-center px-4 pb-3 mt-4">
-          <div className="border px-3 py-1 bg-gradient-to-r from-green-600 to-green-700 rounded-md text-xs font-mono text-white">
+        <div className="flex justify-between items-center px-5 pb-5 ">
+          <div
+            className="px-3 py-1 rounded-md text-xs font-medium text-white 
+      bg-gradient-to-r from-green-500 to-green-600 shadow-sm"
+          >
             TOP PICKS
           </div>
 
           <div
-            className="flex items-center gap-1 px-2 py-1 rounded-md bg-gradient-to-r from-slate-700 to-gray-900
- text-white text-sm font-mono"
+            className="flex items-center gap-1 px-3 py-1 rounded-md 
+      bg-gray-900 text-white text-sm font-medium"
           >
-            <img src={star} className="w-4 h-4 invert font-mono" alt="rating" />
+            <img src={star} className="w-4 h-4 invert" alt="rating" />
             {avgRating}
           </div>
         </div>
@@ -52,7 +64,5 @@ const RestroCard = (restaurantInfromation) => {
     </div>
   );
 };
-
-
 
 export default RestroCard;

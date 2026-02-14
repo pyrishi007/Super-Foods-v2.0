@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
-import EmptyCart from "./emptyCart";
+import NoCart                    from "./NoCart";
+
 import ProductCart from "./ProductCart";
 
 const Cart = () => {
-  const { emptyCart } = useSelector((store) => store.cart);
-  console.log(emptyCart);
-
-  return <div>{emptyCart ? <EmptyCart /> : <ProductCart />}</div>;
+  const cartLength = useSelector((store) => store.cart.cartItem);
+  return <div>{cartLength.length === 0 ? <NoCart /> : <ProductCart />}</div>;
 };
 
 export default Cart;

@@ -10,6 +10,7 @@ const EachCartProduct = (eachCartitem) => {
 
   const HandleRemovefromCart = () => {
     dispatch(removeItem(id));
+                    
   };
 
   return (
