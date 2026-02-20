@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import NoCart                    from "./NoCart";
+import NoCart from "./NoCart";
 
 import ProductCart from "./ProductCart";
 

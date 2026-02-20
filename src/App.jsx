@@ -1,34 +1,32 @@
-import React, { lazy, Suspense } from "react";
-import ReactDOM from "react-dom/client";
-import Header from "./Components/Navigation/Header.jsx";
 import Body from "./Components/Body.jsx";
-import Footer from "./Components/Footer/Footer.jsx";
-import UserProfile from "./Components/UserProfile/UserCLass.jsx";
-import RouteError from "./Components/ErrorUI/RouteError/RouteError.jsx";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import Cart from "./Components/Cart/Cart.jsx";
+import ReactDOM from "react-dom/client";
+import UserProfile from "./Components/UserProfile/UserCLass.jsx";
+import RouteError from "./Components/ErrorUI/RouteError/RouteError.jsx";
+import AppLayout_SuperFood from "./Index.Jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Provider } from "react-redux";
+import SignInForm from "./Components/Auth/SignInForm.jsx";
+import AuthLayout from "./Components/Auth/AuthLayout.jsx";
 
 //Implementing Lazy-load
 const AboutUS = lazy(() => import("./Components/AboutUs/AboutUS.jsx"));
 const MenuPage = lazy(() => import("./Components/MenuPage/MenuPage.jsx"));
 
-// Layout component that wraps Header, Footer, and nested page content
-const AppLayout_SuperFood = () => {
-  return (
-    <>
-      <React.StrictMode>
-        <Provider store={store}>
-          <Header />
-          <Outlet />
-          <Footer />
-        </Provider>
-      </React.StrictMode>
-    </>
-  );
-};
 const router = createBrowserRouter([
+    {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "form",
+        element: <SignInForm />
+      },
+    ]
+  },
+
   {
     path: "/",
     element: <AppLayout_SuperFood />,
@@ -69,4 +67,8 @@ const router = createBrowserRouter([
 
 // Render the app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
+);
