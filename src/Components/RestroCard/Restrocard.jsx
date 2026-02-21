@@ -1,5 +1,5 @@
 import star from "../../Assets/star.png";
-import { CDN_LINK as restroImage } from "../../utils/constants.jsx";
+import { CDN_LINK as restroImage } from "../../utils/constants.js";
 
 //Restrocard
 const RestroCard = (restaurantInfromation) => {

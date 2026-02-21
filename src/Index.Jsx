@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./Components/Navigation/Header";
 import Footer from "./Components/Footer/Footer";
 import { Outlet } from "react-router-dom";
@@ -7,11 +6,9 @@ import { Outlet } from "react-router-dom";
 const AppLayout_SuperFood = () => {
   return (
     <>
-      <React.StrictMode>
-        <Header />
-        <Outlet />
-        <Footer />
-      </React.StrictMode>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 };
