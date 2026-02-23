@@ -1,4 +1,4 @@
-import { useBody } from "../../Hooks/useBody";
+
 import TopRatedRestro from "../TopRatedRestro/TopRatedRestro";
 
 export const Search = (prop) => {
@@ -11,7 +11,7 @@ export const Search = (prop) => {
       {/* HEADING */}
       <div className=" font flex  gap-3">
         <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-800 text-center">
-          Find Your
+          Find Your 
         </h1>
         <h1 className="text-4xl lg:text-6xl font-extrabold text-amber-500 text-center">
           Favorite

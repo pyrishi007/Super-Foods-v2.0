@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import Contact from "./Components/Contact/Contact.jsx";
 
 //Implementing Lazy-load
 const AboutUS = lazy(() => import("./Components/AboutUs/AboutUS.jsx"));
@@ -18,49 +19,56 @@ const MenuPage = lazy(() => import("./Components/MenuPage/MenuPage.jsx"));
 
 const router = createBrowserRouter([
   {
-    path: "/auth",
-    element: <AuthLayout />,
+    element: <AuthLayout />, // 🔐 global auth check
     children: [
       {
-        path: "form",
-        element: <Form />,
+        path: "/auth",
+        children: [
+          {
+            path: "form",
+            element: <Form />,
+          },
+        ],
       },
-    ],
-  },
 
-  {
-    path: "/",
-    element: <AppLayout_SuperFood />,
-    errorElement: <RouteError />,
-
-    children: [
       {
-        path: "",
-        element: <Body />,
-      },
-      {
-        path: "About",
-        element: (
-          <Suspense fallback={<h1>Loading</h1>}>
-            <AboutUS />
-          </Suspense>
-        ),
-      },
-      {
-        path: "restaurant/Menupage/:resID",
-        element: (
-          <Suspense fallback={<h1>Loading</h1>}>
-            <MenuPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "UserProfile.info",
-        element: <UserProfile name={"rishi"} />,
-      },
-      {
-        path: "cart",
-        element: <Cart />,
+        path: "/",
+        element: <AppLayout_SuperFood />,
+        errorElement: <RouteError />,
+        children: [
+          {
+            index: true,
+            element: <Body />,
+          },
+          {
+            path: "cart",
+            element: <Cart />,
+          },
+          {
+            path: "contact",
+            element: <Contact />,
+          },
+          {
+            path: "about",
+            element: (
+              <Suspense fallback={<h1>Loading</h1>}>
+                <AboutUS />
+              </Suspense>
+            ),
+          },
+          {
+            path: "restaurant/Menupage/:resID",
+            element: (
+              <Suspense fallback={<h1>Loading</h1>}>
+                <MenuPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "UserProfile.info",
+            element: <UserProfile name={"rishi"} />,
+          },
+        ],
       },
     ],
   },

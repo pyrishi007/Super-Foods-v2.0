@@ -12,14 +12,14 @@ const MenuCardCategories = ({ index, data, showItem, setItemIndex }) => {
 
   return (
     <div className=" font w-6/12 m-auto px-5 py-3">
-      {/* HEADER */}
+
       <div
         onClick={handleClick}
         className="flex items-center justify-between cursor-pointer rounded-xl px-4 py-4 my-4 
     bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
       >
         <div className="flex flex-col">
-          {/* TITLE */}
+
           <p className="font-semibold text-amber-600 text-2xl">
             {title}
             <span className="ml-2 text-xl  font-medium  text-gray-400">
@@ -27,13 +27,12 @@ const MenuCardCategories = ({ index, data, showItem, setItemIndex }) => {
             </span>
           </p>
 
-          {/* SUBTEXT */}
+
           <p className="text-sm text-gray-950 mt-1">
             Browse delicious options from this category
           </p>
         </div>
 
-        {/* ARROW */}
         <span
           className={`text-gray-500 text-xl transition-transform duration-300 ${
             showItem ? "rotate-180" : ""

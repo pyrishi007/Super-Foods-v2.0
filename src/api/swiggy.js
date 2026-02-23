@@ -3,7 +3,6 @@ import {
   SWIGGY_RESTAURANTS_MENU_API_URL,
 } from "../utils/constants";
 
-
 // Restro_API
 export const fetchRestrouantshApi = async () => {
   try {
@@ -13,13 +12,15 @@ export const fetchRestrouantshApi = async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    return (data = await response.json());
+    const data = await response.json();
+    return data;
+
+    
   } catch (error) {
     console.error("Fetch API error:", error);
     return { error: true, message: "Fatal Response" };
   }
 };
-
 
 // Menu_API
 export const fetchRestrouantsMenu_Api = async (resID) => {

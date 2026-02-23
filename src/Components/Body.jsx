@@ -37,7 +37,7 @@ const Body = () => {
 
       <div className="w-full flex flex-col items-center text-right">
         <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-800 text-center">
-          Discover <span className="text-amber-500">Restaurant's</span> near you
+          Discover <span className="text-amber-500">Restaurant's</span> neasaar you
         </h1>
 
         <div className="flex justify-center flex-wrap gap-8 mt-10 px-6">

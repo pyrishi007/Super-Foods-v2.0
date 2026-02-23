@@ -15,6 +15,9 @@ const Banner = (props) => {
     cuisines,
   } = bannerInfo;
 
+  console.log(bannerInfo);
+  
+
   return (
     <div className="flex justify-center">
       <div
