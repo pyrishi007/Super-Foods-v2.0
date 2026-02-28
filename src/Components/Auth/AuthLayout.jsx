@@ -22,12 +22,10 @@ const AuthLayout = () => {
           }),
         );
 
-        // if logged in and on login page → go home
         if (location.pathname.startsWith("/auth")) {
           navigate("/");
         }
       } else {
-        // if not logged in and not on login page → go login
         if (!location.pathname.startsWith("/auth")) {
           navigate("/auth/form");
         }
@@ -39,7 +37,6 @@ const AuthLayout = () => {
     return () => unsubscribe();
   }, [dispatch, navigate, location.pathname]);
 
-  // 🚨 WAIT until firebase auth finishes
   if (checking) return <h1>Checking auth...</h1>;
 
   return <Outlet />;

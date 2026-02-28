@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This app is based on food delivery ",
   "scripts": {
-    "start": "parcel Index.html -p 1500",
-    "build": "parcel build Index.html",
+    "start": "parcel index.html -p 1990",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "super_foods",

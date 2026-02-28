@@ -14,8 +14,6 @@ export const fetchRestrouantshApi = async () => {
 
     const data = await response.json();
     return data;
-
-    
   } catch (error) {
     console.error("Fetch API error:", error);
     return { error: true, message: "Fatal Response" };
@@ -31,7 +29,8 @@ export const fetchRestrouantsMenu_Api = async (resID) => {
       throw new Error();
     }
 
-    return (data = await response.json());
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Fetch API error:", error);
     return { error: true, message: "Fatal Response" };

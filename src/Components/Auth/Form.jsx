@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import { AUTH_TOAST } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 
-
 const Form = () => {
   const [isSignUpform, setForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -18,9 +17,9 @@ const Form = () => {
   //Input ref
   const email = useRef();
   const password = useRef();
-  
+
   //Navigation
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   //Form Change
   const handleChnageForm = () => {
@@ -47,7 +46,6 @@ const Form = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           toast.success("Welcome to Super Food’s 👋", AUTH_TOAST);
-          navigate("/")
         })
         .catch((error) => {
           console.log(error.message);
@@ -63,7 +61,6 @@ const Form = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           toast.success("Account successfully created", AUTH_TOAST);
-          navigate("/")
         })
         .catch((error) => {
           toast.error("Account Already created", AUTH_TOAST);

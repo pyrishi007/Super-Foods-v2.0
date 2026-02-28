@@ -7,7 +7,7 @@ const Navigation = () => {
 
   return (
     <>
-      <ul className="flex items-center mx-25">
+      <ul className="flex items-center mx-25 ">
         <li className="flex-col px-5">
           <NavLink
             to="/"

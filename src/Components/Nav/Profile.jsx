@@ -40,11 +40,11 @@ const Profile = () => {
         {isClicked && (
           <div className="absolute right-0 top-12 w-52 bg-gray-900 text-gray-200 rounded-xl shadow-xl border border-gray-700 p-2">
             <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-800 hover:rounded-xl hover:text-white transition">
-              Settings
+              Setting
             </button>
 
             <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-800 hover:rounded-xl hover:text-white transition">
-              Profiled
+              Profile
             </button>
 
             <div className="border-t border-gray-700 my-1"></div>
